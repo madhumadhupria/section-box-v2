@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section Box — Option 1</title>
+  <link rel="stylesheet" href="src/style.css" />
+  <!-- No-build setup: Three.js from CDN via import map (works without npm install).
+       Once the Artifactory npm token is refreshed you can `npm install` + `npm run dev` for Vite instead. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Option bar: toggle between box styles -->
+  <div id="option-bar">
+    <span class="opt-dot"></span>
+    <select id="model-select" title="Model">
+      <option value="house">House</option>
+      <option value="residential">Residential</option>
+    </select>
+    <span class="bar-divider"></span>
+    <select id="opt-select">
+      <option value="1">Option 1 — Filled box</option>
+      <option value="2">Option 2 — Clear box + highlight</option>
+      <option value="6">Option 6 — Paint, no edges</option>
+    </select>
+    <span class="bar-divider"></span>
+    <select id="color-select" title="Box color">
+      <option value="purple">Purple</option>
+      <option value="teal">Teal</option>
+      <option value="blue">Blue</option>
+      <option value="orange">Orange</option>
+      <option value="pink">Pink</option>
+    </select>
+    <span class="bar-divider"></span>
+    <select id="appearance-select" title="Appearance">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+    <span class="bar-divider"></span>
+    <label class="switch-field" title="Section box — resizable from all sides, cuts the model">
+      <span class="switch"><input type="checkbox" id="section-toggle" /><span class="slider"></span></span>
+      Section box
+    </label>
+    <button id="clear-section-btn" title="Clear the section cut">Clear section</button>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
